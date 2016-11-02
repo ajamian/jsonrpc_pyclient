@@ -1,6 +1,6 @@
 jsonrpc_pyclient
 ================
-jsonrpc_pyclient is a transport-agnostic json-rpc client library primarily intended for use with
+jsonrpc_pyclient is a transport-agnostic json-rpc 2.0 and 1.0 client library primarily intended for use with
 libjson-rpc-cpp_ but can be used with other json-rpc server implementations.
 
 .. _libjson-rpc-cpp: https://github.com/tvannoy/libjson-rpc-cpp
