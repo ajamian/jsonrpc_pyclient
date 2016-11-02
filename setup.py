@@ -36,5 +36,7 @@ setup(
 
     extras_require={
         'test': ['werkzeug']
-    }
+    },
+
+    test_suite='tests'
 )
