@@ -2,7 +2,7 @@
 json-rpc client library.
 
 jsonrpc_pyclient is a json-rpc 2.0 and 1.0 client library primarily intended for use with
-libjson-rpc-cpp (https://github.com/tvannoy/libjson-rpc-cpp),
+libjson-rpc-cpp (https://github.com/cinemast/libjson-rpc-cpp),
 but can be used with other json-rpc server implementations.
 
 This library is intended to be used with libjson-rpc-cpp's stubgenerator,
