@@ -11,10 +11,10 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='jsonrpc_pyclient',
-    version='1.0.2',
+    version='1.1.1',
     description='A transport-agnostic json-rpc client library',
     long_description=long_description,
-    url='https://github.com/cinemast/libjson-rpc-cpp',
+    url='https://github.com/tvannoy/jsonrpc_pyclient',
 
     author='Trevor Vannoy',
     author_email='trevor.vannoy@flukecal.com',
