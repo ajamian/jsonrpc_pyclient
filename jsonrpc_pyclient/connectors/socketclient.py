@@ -15,7 +15,7 @@ class SocketClient(object):
 
     __metaclass__ = ABCMeta
 
-    def __init__(self, ip, port, buffersize=64):
+    def __init__(self, ip, port, timeout=None, buffersize=64):
         """SocketClient can't be instantiated."""
         pass
 
@@ -51,7 +51,7 @@ class SocketClient(object):
 class TcpSocketClient(SocketClient):
     """Socket client transport that uses tcp sockets."""
 
-    def __init__(self, ip, port, buffersize=64):
+    def __init__(self, ip, port, timeout=None, buffersize=64):
         """
         Create TcpSocketClient object.
 
@@ -68,13 +68,14 @@ class TcpSocketClient(SocketClient):
         self.port = port
         self.buffersize = buffersize
         self._error = False
+        self._socketFd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self._socketFd.settimeout(timeout)
 
     def _connect(self):
         """Connect to the socket at (ip, port)."""
         global _logger
 
         if not self._error:
-            self._socketFd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             try:
                 self._socketFd.connect((self.ip, self.port))
             except OSError as e:
