@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='jsonrpc_pyclient',
-    version='1.1.2',
+    version='1.1.3',
     description='A transport-agnostic json-rpc client library',
     long_description=long_description,
     url='https://github.com/tvannoy/jsonrpc_pyclient',
