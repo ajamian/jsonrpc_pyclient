@@ -36,7 +36,7 @@ class TestTcpSocketClient(unittest.TestCase):
         expected = {"jsonrpc": "2.0", "id": 5, "result": "Hello Winnie-the-Pooh"}
         self.assertEqual(json.loads(response), expected)
 
-    def test_send_rpc_message_requests_failure(self):
+    def test_send_rpc_message_failure(self):
         client = TcpSocketClient("127.0.0.1", 1234)
 
         hello = {"method": "sayHello", "jsonrpc": "2.0", "id": 5,
