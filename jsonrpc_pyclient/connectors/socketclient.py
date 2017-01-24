@@ -68,14 +68,15 @@ class TcpSocketClient(SocketClient):
         self.port = port
         self.buffersize = buffersize
         self._error = False
-        self._socketFd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self._socketFd.settimeout(timeout)
+        self.timeout = timeout
 
     def _connect(self):
         """Connect to the socket at (ip, port)."""
         global _logger
 
         if not self._error:
+            self._socketFd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            self._socketFd.settimeout(self.timeout)
             try:
                 self._socketFd.connect((self.ip, self.port))
             except OSError as e:
